@@ -69,29 +69,6 @@ LinkedList<T>::~LinkedList()
     }
 }
 
-template<typename T>
-LinkedList<T>& LinkedList<T>::operator=(const LinkedList<T> &right) {
-    if (this != &right) {
-        // Utf�r kopiering enligt kopieringskontruktorn
-        Node *walker = right.first;
-        this->first = new Node(walker->element);
-        Node *last = this->first;
-        walker = walker->next;
-        while (walker != nullptr) {
-            last->next = new Node(walker->element);
-            last = last->next;
-            walker = walker->next;
-        }
-        // avallocela befintliga noder
-        Node *temp = this->first;
-        while (temp != nullptr) {
-            this->temp = walker->next;
-            delete temp;
-            temp = this->first;
-        }
-    }
-    return *this;
-}
 
 template<typename T>
 LinkedList<T>& LinkedList<T>::operator=(const LinkedList& list)
