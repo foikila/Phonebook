@@ -2,6 +2,7 @@
 #define READER_H
 
 #include "List.h"
+#include <fstream>
 #include <string>
 
 template <typename T>
@@ -9,7 +10,6 @@ class Reader
 {
 private:
     std::string filename;
-
 public:
     Reader();
     Reader(const Reader& r);
@@ -23,9 +23,9 @@ public:
 
     // Loads data from storage
     virtual List<T>* read() const = 0;
-
+    virtual void read(List<T> *&list ) const = 0;
     // Saves data to storage
-    virtual bool save() const = 0;
+    virtual bool save(List<T> *&data) const = 0;
 };
 
 template <typename T>

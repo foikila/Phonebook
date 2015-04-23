@@ -9,29 +9,29 @@ template <typename T>
 class LinkedList : public List<T>
 {
 private:
-        class Node {
-            public:
-                Node(T element) {
-                    this->element = element;
-                    this->next = nullptr;
-                }
-                T element;
-                Node *next;
-                ~Node() {}
-        };
-        Node *first;
-        int NrOfElements;
-    public:
-        LinkedList();
-        LinkedList(const LinkedList &list);
-        virtual ~LinkedList();
-        LinkedList& operator=(const LinkedList &right);
-        void insertAt(int pos, T element);
-        T elementAt(int pos) const;
-        T removeAt(int pos);
-        int size() const;
-        bool isEmpty() const;
-        std::string toString() const;
+    class Node {
+        public:
+            Node(T element) {
+                this->element = element;
+                this->next = nullptr;
+            }
+            T element;
+            Node *next;
+            ~Node() {}
+    };
+    Node *first;
+    int NrOfElements;
+public:
+    LinkedList();
+    LinkedList(const LinkedList &list);
+    virtual ~LinkedList();
+    LinkedList& operator=(const LinkedList &right);
+    void insertAt(int pos, T element);
+    T elementAt(int pos) const;
+    T removeAt(int pos);
+    int size() const;
+    bool isEmpty() const;
+    std::string toString() const;
 };
 
 template<typename T>

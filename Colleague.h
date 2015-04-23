@@ -14,7 +14,7 @@ public:
     Colleague();
     Colleague(std::string name, std::string phoneNumber, std::string email,
               int birthYear, std::string title, std::string workTitle);
-    ~Colleague();
+    virtual ~Colleague();
     Colleague& operator=(const Colleague& c);
     bool operator==(const Colleague& c) const;
     bool operator!=(const Colleague& c) const;

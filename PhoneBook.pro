@@ -16,7 +16,9 @@ SOURCES += main.cpp\
         mainwindow.cpp \
         Person.cpp \
     Friend.cpp \
-    Colleague.cpp
+    Colleague.cpp \
+    Administration.cpp \
+    testReader.cpp
 
 HEADERS  += mainwindow.h \
     LinkedList.h \
@@ -25,7 +27,8 @@ HEADERS  += mainwindow.h \
     Reader.h \
     Person.h \
     Friend.h \
-    Colleague.h
+    Colleague.h \
+    Administration.h
 
 FORMS    += mainwindow.ui
 

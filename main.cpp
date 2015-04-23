@@ -8,7 +8,7 @@
 
 #include <iostream>
 using namespace std;
-
+/*
 int main()
 {
     Reader<string> *r = new FileReader<string>("filename.txt");
@@ -16,7 +16,7 @@ int main()
 
     delete r;
     return 0;
-}
+}*/
 
 /*
 int main(int argc, char *argv[])
