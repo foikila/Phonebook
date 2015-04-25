@@ -12,8 +12,8 @@ public:
     virtual ~Reader() {}
 
     // Loads data from storage
-    virtual List<T>* read() const = 0;
-    virtual void read(List<T> *&list ) const = 0;
+    virtual List<T>* read()  = 0;
+    virtual void read(List<T> *&list ) = 0;
     // Saves data to storage
     virtual bool save(List<T> *&data) const = 0;
 };

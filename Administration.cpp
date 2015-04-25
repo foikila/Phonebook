@@ -25,11 +25,16 @@ bool Administration::operator!=(const Administration& a) const
 {
     return false;
 }
+std::string Administration::getClassName() const
+{
+    std::string className = typeid(*this).name();
+    return className.erase(0, 1);
+}
 
-std::string Administration::toStringSpecc() const
+std::string Administration::toStringSpec() const
 {
     std::stringstream ss;
-    ss << typeid(*this).name() << std::endl;
-    ss << Colleague::toString() << std::endl;
+    ss << this->getClassName() << std::endl;
+    ss << this->getWorkTitle() << std::endl;
     return ss.str();
 }

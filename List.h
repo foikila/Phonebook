@@ -14,6 +14,7 @@ public:
     virtual T* peek() = 0;
     virtual T* remove() = 0;
     virtual T* remove(T *element) = 0;
+    virtual unsigned int size() const = 0;
    //  virtual int size() const = 0;
     virtual bool isEmpty() const = 0;
     virtual std::string toString() const = 0;

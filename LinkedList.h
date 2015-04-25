@@ -5,9 +5,7 @@
 #include <sstream>
 #include <iostream>
 
-using std::string;
 using std::stringstream;
-using std::endl;
 
 template <typename T>
 class LinkedList : public List<T>
@@ -20,11 +18,17 @@ private:
                 this->next = nullptr;
             }
             T *element;
+            std::ostream operator<<(std::ostream &out)
+            {
+                out << *this->element;
+                return out;
+            }
+
             Node *next;
             ~Node() {}
     };
     Node *first;
-    int nrOfEle;
+    unsigned int nrOfEle;
 public:
     LinkedList();
     LinkedList(const LinkedList &l);
@@ -34,9 +38,10 @@ public:
     T* peek();
     T* remove();
     T* remove(T *element);
-    int size() const;
+    unsigned int size() const;
     bool isEmpty() const;
     std::string toString() const;
+
 };
 
 template <typename T>
@@ -95,8 +100,6 @@ LinkedList<T>::~LinkedList()
     Node *walker = this->first;
     while (walker != nullptr) {
         this->first = walker->next;
-        // should this be here?
-        delete walker->element;
         delete walker;
         walker = this->first;
     }
@@ -140,7 +143,7 @@ T* LinkedList<T>::remove()
 template <typename T>
 T* LinkedList<T>::remove(T *element)
 {
-    if (!this->isEmpty()) {
+    /*if (!this->isEmpty()) {
         Node *walker = this->first;
         // Walks and linear seachers the element //
         while (walker != nullptr && *walker != *element) {
@@ -152,7 +155,7 @@ T* LinkedList<T>::remove(T *element)
         delete walker;
         this->nrOfEle--;
         return ret;
-    }
+    }*/
     return nullptr;
 }
 
@@ -163,9 +166,21 @@ bool LinkedList<T>::isEmpty() const
 }
 
 template <typename T>
+unsigned int LinkedList<T>::size() const
+{
+    return this->nrOfEle;
+}
+
+template <typename T>
 std::string LinkedList<T>::toString() const
 {
-    return "";
+    std::stringstream ss;
+    Node *walker = this->first;
+    while (walker != nullptr) {
+        ss << walker->element->toString();
+        walker = walker->next;
+    }
+    return ss.str();
 }
 
 #endif

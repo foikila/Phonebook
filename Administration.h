@@ -15,10 +15,11 @@ public:
     Administration();
     Administration(std::string name, std::string phoneNumber, std::string email,
                    int birthYear, std::string title, std::string workTitle);
-    ~Administration();
+    virtual ~Administration();
     bool operator==(const Administration& a) const;
     bool operator!=(const Administration& a) const;
-    std::string toStringSpecc() const;
+    virtual std::string toStringSpec() const;
+    virtual std::string getClassName() const;
 };
 
 #endif
