@@ -18,7 +18,7 @@ public:
     Colleague& operator=(const Colleague& c);
     bool operator==(const Colleague& c) const;
     bool operator!=(const Colleague& c) const;
-    std::string toString() const;
+    std::string toStringSpec() const;
 
     std::string getWorkTitle() const;
 

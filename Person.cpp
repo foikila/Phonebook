@@ -16,7 +16,7 @@ Person::Person(std::string name, std::string phoneNumber, std::string email,
     this->phoneNumber = phoneNumber;
     this->email = email;
     this->birthYear = birthYear;
-    this->title = title;
+    this->setTitle(title);
 }
 
 Person::Person(const Person& p)
@@ -40,15 +40,26 @@ Person& Person::operator=(const Person& p)
 
 bool Person::operator!=(const Person& p) const
 {
-    return this->getBirthYear() != p.getBirthYear() && this->getEmail() != p.getEmail()
-            && this->getName() != p.getName() && this->getPhoneNumber() != p.getPhoneNumber()
-            && this->getTitle() != p.getTitle();
+    // Should only be one person with the same name and number
+    return this->getName() != p.getName() && this->getPhoneNumber() != p.getPhoneNumber();
 }
 
 std::string Person::toString() const
 {
-    return "";
+    std::stringstream ss;
+    ss << this->toStringSpec();
+    ss << this->name << std::endl;
+    ss << this->phoneNumber << std::endl;
+    ss << this->email << std::endl;
+    ss << this->birthYear << std::endl;
+    ss << this->title << std::endl;
+    return ss.str();
 }
+
+
+
+
+
 
 std::string Person::getName() const
 {
@@ -97,6 +108,7 @@ void Person::setBirthYear(unsigned int year)
 
 void Person::setTitle(std::string title)
 {
+    std::transform(title.begin(), title.end(), title.begin(), ::toupper);
     this->title = title;
 }
 

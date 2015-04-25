@@ -3,6 +3,8 @@
 
 #include <sstream>
 #include <string>
+#include <typeinfo>
+#include <algorithm>
 
 const std::string DEFAULT = "invalid";
 
@@ -21,7 +23,10 @@ public:
     Person(const Person& p);
     virtual ~Person() {}
     Person& operator=(const Person& p);
-    virtual std::string toString() const = 0;
+    std::string toString() const;
+    virtual std::string toStringSpec() const = 0;
+    virtual std::string getClassName() const = 0;
+
 
     bool operator !=(const Person &p) const;
 

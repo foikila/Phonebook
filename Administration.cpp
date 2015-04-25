@@ -26,10 +26,10 @@ bool Administration::operator!=(const Administration& a) const
     return false;
 }
 
-std::string Administration::toString() const
+std::string Administration::toStringSpecc() const
 {
     std::stringstream ss;
+    ss << typeid(*this).name() << std::endl;
     ss << Colleague::toString() << std::endl;
-    ss << std::endl;
     return ss.str();
 }

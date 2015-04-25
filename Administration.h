@@ -18,7 +18,7 @@ public:
     ~Administration();
     bool operator==(const Administration& a) const;
     bool operator!=(const Administration& a) const;
-    std::string toString() const;
+    std::string toStringSpecc() const;
 };
 
 #endif
