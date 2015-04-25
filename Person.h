@@ -7,9 +7,6 @@
 #include <algorithm>
 #include <ostream>
 
-//namespace Phonebook {
-
-
 const std::string DEFAULT = "invalid";
 
 class Person
@@ -47,5 +44,4 @@ public:
     void setTitle(std::string title);
 };
 
-// }
 #endif
