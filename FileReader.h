@@ -12,10 +12,16 @@
 template <typename T>
 class FileReader : public Reader<T>
 {
+private:
+    std::string filename;
 public:
     FileReader();
     FileReader(std::string filename);
     virtual ~FileReader();
+
+    void setFileName(const std::string filename);
+
+    std::string getFileName() const;
 
     // Loads data from storage
     List<T>* read() const;
@@ -32,8 +38,9 @@ FileReader<T>::FileReader() : Reader<T>()
 }
 
 template <typename T>
-FileReader<T>::FileReader(std::string filename) : Reader<T>(filename)
+FileReader<T>::FileReader(std::string filename) : Reader<T>()
 {
+    this->filename = filename;
 }
 
 template <typename T>
@@ -41,12 +48,25 @@ FileReader<T>::~FileReader()
 {
 }
 
+
+template <typename T>
+void FileReader<T>::setFileName(const std::string filename)
+{
+    this->filename = filename;
+}
+
+template <typename T>
+std::string FileReader<T>::getFileName() const
+{
+    return this->filename;
+}
+
 // Loads data from storage
 template <typename T>
 List<T>* FileReader<T>::read() const
 {
     List<T> *list = new LinkedList<T>();
-    std::ifstream read(this->getFileName());
+    std::ifstream read(this->filename);
     if (!read.is_open()) {
         delete list;
         throw "Failed to open file";
