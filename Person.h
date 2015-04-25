@@ -23,6 +23,8 @@ public:
     Person& operator=(const Person& p);
     virtual std::string toString() const = 0;
 
+    bool operator !=(const Person &p) const;
+
     std::string getName() const;
     std::string getPhoneNumber() const;
     std::string getEmail() const;
