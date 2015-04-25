@@ -5,6 +5,10 @@
 #include <string>
 #include <typeinfo>
 #include <algorithm>
+#include <ostream>
+
+//namespace Phonebook {
+
 
 const std::string DEFAULT = "invalid";
 
@@ -27,7 +31,7 @@ public:
     virtual std::string toStringSpec() const = 0;
     virtual std::string getClassName() const = 0;
 
-
+    std::ostream& operator<<(std::ostream &os);
     bool operator !=(const Person &p) const;
 
     std::string getName() const;
@@ -43,4 +47,5 @@ public:
     void setTitle(std::string title);
 };
 
+// }
 #endif

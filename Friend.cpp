@@ -36,6 +36,12 @@ bool Friend::operator!=(const Friend& f) const
             this->getTitle() != f.getTitle() && this->getHomeNumber() != f.getHomeNumber();
 }
 
+std::ostream& Friend::operator<<(std::ostream& os)
+{
+    os << this->toString();
+    return os;
+}
+
 std::string Friend::getHomeNumber() const
 {
     return this->homeNumber;

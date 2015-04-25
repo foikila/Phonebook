@@ -38,10 +38,16 @@ Person& Person::operator=(const Person& p)
     return *this;
 }
 
-bool Person::operator!=(const Person& p) const
+bool Person::operator!=(const Person &p) const
 {
     // Should only be one person with the same name and number
     return this->getName() != p.getName() && this->getPhoneNumber() != p.getPhoneNumber();
+}
+
+std::ostream& Person::operator<<(std::ostream &os)
+{
+    os << this->toString();
+    return os;
 }
 
 std::string Person::toString() const
