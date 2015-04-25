@@ -55,7 +55,7 @@ LinkedList<T>::LinkedList(const LinkedList &l)
         this->first = new Node(walker->element);
         Node *last = this->first;
         walker = walker->next;
-        while (wakler != nullptr) {
+        while (walker != nullptr) {
             last->next = new Node(walker->element);
             last = last->next;
             walker = walker->next;
