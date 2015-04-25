@@ -6,7 +6,7 @@
 
 using namespace std;
 
-
+/*
 int main()
 {
     string filename = "test.txt";
@@ -20,3 +20,4 @@ int main()
     delete r;
     return 0;
 }
+*/

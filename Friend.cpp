@@ -48,5 +48,7 @@ void Friend::setHomeNumber(std::string number)
 
 std::string Friend::toString() const
 {
-    return "";
+    std::stringstream ss;
+    ss << this->getName() << std::endl;
+    return ss.str();
 }

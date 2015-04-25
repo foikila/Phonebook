@@ -71,7 +71,7 @@ bool FileReader<T>::save(List<T> *&data) const
         std::ofstream write(this->getFileName());
         std::string type;
         while(data->isEmpty() == false) {
-            Person *p = data->removeAt((0));
+            Person *p = data->peek();
             Administration* a = dynamic_cast<Administration*>(p);
             Friend *f = dynamic_cast<Friend*>(p);
 

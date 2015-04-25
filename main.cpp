@@ -47,6 +47,7 @@ int main () {
 
 }*/
 /* insert tests */
+/*
 void insert(List<int> *&list) {
     try {
         cout << "Insert of 10 at pos 3. Expected output 10" << endl;
@@ -119,3 +120,4 @@ void remove(List<int> *&list) {
     cout << "After: " << endl;
     cout << list->toString() << endl;
 }
+*/

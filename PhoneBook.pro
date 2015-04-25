@@ -18,17 +18,19 @@ SOURCES += main.cpp\
     Friend.cpp \
     Colleague.cpp \
     Administration.cpp \
-    testReader.cpp
+    testReader.cpp \
+    testLinkedList.cpp
 
 HEADERS  += mainwindow.h \
-    LinkedList.h \
     List.h \
     FileReader.h \
     Reader.h \
     Person.h \
     Friend.h \
     Colleague.h \
-    Administration.h
+    Administration.h \
+    _LinkedList.h \
+    LinkedList.h
 
 FORMS    += mainwindow.ui
 

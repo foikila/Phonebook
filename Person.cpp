@@ -38,6 +38,13 @@ Person& Person::operator=(const Person& p)
     return *this;
 }
 
+bool Person::operator!=(const Person& p) const
+{
+    return this->getBirthYear() != p.getBirthYear() && this->getEmail() != p.getEmail()
+            && this->getName() != p.getName() && this->getPhoneNumber() != p.getPhoneNumber()
+            && this->getTitle() != p.getTitle();
+}
+
 std::string Person::toString() const
 {
     return "";
