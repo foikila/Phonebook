@@ -9,7 +9,6 @@ Administration:: Administration(
         int birthYear, std::string title, std::string workTitle)
     : Colleague(name, phoneNumber, email, birthYear, title, workTitle)
 {
-
 }
 
 Administration::~Administration()
@@ -18,12 +17,12 @@ Administration::~Administration()
 
 bool Administration::operator==(const Administration& a) const
 {
-    return false;
+    return this->getName() == a.getName() && this->getWorkTitle() != a.getWorkTitle();
 }
 
 bool Administration::operator!=(const Administration& a) const
 {
-    return false;
+    return this->getName() != a.getName() && this->getWorkTitle() != a.getWorkTitle();
 }
 std::string Administration::getClassName() const
 {

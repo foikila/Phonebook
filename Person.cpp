@@ -62,11 +62,6 @@ std::string Person::toString() const
     return ss.str();
 }
 
-
-
-
-
-
 std::string Person::getName() const
 {
     return this->name;

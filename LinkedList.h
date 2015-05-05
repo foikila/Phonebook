@@ -41,7 +41,7 @@ public:
     unsigned int size() const;
     bool isEmpty() const;
     std::string toString() const;
-
+    T*& elementAt(const unsigned int) const;
 };
 
 template <typename T>
@@ -109,6 +109,7 @@ template <typename T>
 void LinkedList<T>::insert(T *element)
 {
     if (this->isEmpty()) {
+        std::cout << element << std::endl;
         this->first = new Node(element);
     } else {
         Node *walker = this->first;
@@ -181,6 +182,23 @@ std::string LinkedList<T>::toString() const
         walker = walker->next;
     }
     return ss.str();
+}
+
+template <typename T>
+T*& LinkedList<T>::elementAt(const unsigned int pos) const
+{
+    using namespace std;
+    if (pos > 0 && pos > this->nrOfEle) {
+        throw "index out of bound";
+    } else if (!this->isEmpty()) {
+        Node *walker = this->first;
+        for (unsigned int i = 0; i < pos && walker != nullptr; i++) {
+            walker = walker->next;
+        }
+
+        return walker->element;
+    }
+    throw "Trying to get element that does not exist";
 }
 
 #endif

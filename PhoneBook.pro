@@ -18,8 +18,9 @@ SOURCES += main.cpp\
     Friend.cpp \
     Colleague.cpp \
     Administration.cpp \
-    testReader.cpp \
-    testLinkedList.cpp
+    Phonebook.cpp \
+    viewDialog.cpp \
+    friendEditdialog.cpp
 
 HEADERS  += mainwindow.h \
     List.h \
@@ -29,9 +30,13 @@ HEADERS  += mainwindow.h \
     Friend.h \
     Colleague.h \
     Administration.h \
-    _LinkedList.h \
-    LinkedList.h
+    LinkedList.h \
+    Phonebook.h \
+    viewDialog.h \
+    friendEditdialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    viewDialog.ui \
+    friendEditdialog.ui
 
 QMAKE_CXXFLAGS += -std=c++11
