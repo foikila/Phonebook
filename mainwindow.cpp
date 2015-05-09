@@ -40,9 +40,12 @@ MainWindow::MainWindow(QWidget *parent) :
         this->book->saveBook("myContact.txt");*/
         this->book->loadBook("myContact.txt");
     } catch (const char *e) {
+        QMessageBox messageBox;
+        messageBox.critical(this,"Error", "Failed to load file");
+        messageBox.setFixedSize(500,200);
         std::cout << e << std::endl;
     }
-    this->reloadListWidget();    
+    this->reloadListWidget();
 }
 
 MainWindow::~MainWindow()
@@ -55,11 +58,26 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     int toView = ui->listWidget->currentRow();
-    std::cout << "toview " << toView << std::endl;
     if (toView >= 0) {
-        std::cout <<  toView << std::endl;
-        Person *p = this->book->findPerson(toView);
-        vd->addPerson(p);
-        vd->show();
+        vd->addPerson(this->book->findPerson(toView));
+        int ret = this->vd->exec();
+
+        std::cout << "RET: " <<  ret << std::endl;
+        switch (ret) {
+        case 0:
+        case 1:
+            this->reloadListWidget();
+            break;
+        default:
+            QMessageBox messageBox;
+            messageBox.critical(this,"Error", "Something terrible happend!");
+            messageBox.setFixedSize(500,200);
+            break;
+        }
+
+    } else {
+        QMessageBox messageBox;
+        messageBox.information(this,"Error","No contact selected!");
+        messageBox.setFixedSize(500,200);
     }
 }

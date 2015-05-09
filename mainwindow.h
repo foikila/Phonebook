@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QMessageBox>
 #include "viewDialog.h"
 #include "Phonebook.h"
 #include "List.h"
