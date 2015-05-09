@@ -50,6 +50,18 @@ std::ostream& Person::operator<<(std::ostream &os)
     return os;
 }
 
+std::string Person::toFileString() const
+{
+    std::stringstream ss;
+    ss << this->toFileStringSpecc();
+    ss << this->name << std::endl;
+    ss << this->phoneNumber << std::endl;
+    ss << this->email << std::endl;
+    ss << this->birthYear << std::endl;
+    ss << this->title << std::endl;
+    return ss.str();
+}
+
 std::string Person::toString() const
 {
     std::stringstream ss;

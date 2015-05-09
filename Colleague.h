@@ -19,6 +19,7 @@ public:
     bool operator==(const Colleague& c) const;
     bool operator!=(const Colleague& c) const;
     virtual std::string toStringSpec() const;
+    virtual std::string toFileStringSpecc() const;
 
     std::string getWorkTitle() const;
 

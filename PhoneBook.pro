@@ -16,7 +16,9 @@ SOURCES += main.cpp\
     Administration.cpp \
     Phonebook.cpp \
     viewDialog.cpp \
-    FriendEditDialog.cpp
+    FriendEditDialog.cpp \
+    ColleagueDialog.cpp \
+    Teacher.cpp
 
 HEADERS  += mainwindow.h \
     List.h \
@@ -29,10 +31,13 @@ HEADERS  += mainwindow.h \
     LinkedList.h \
     Phonebook.h \
     viewDialog.h \
-    FriendEditDialog.h
+    FriendEditDialog.h \
+    ColleagueDialog.h \
+    Teacher.h
 
 FORMS    += mainwindow.ui \
     viewDialog.ui \
-    FriendEditDialog.ui
+    FriendEditDialog.ui \
+    ColleagueDialog.ui
 
 QMAKE_CXXFLAGS += -std=c++11

@@ -7,6 +7,7 @@
 
 #include "viewDialog.h"
 #include "FriendEditDialog.h"
+#include "ColleagueDialog.h"
 
 #include "FileReader.h"
 #include "Person.h"
@@ -27,6 +28,7 @@ private:
     Phonebook *book;
     Ui::MainWindow *ui;
     ViewDialog *vd;
+    std::string filename;
     void reloadListWidget();
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -36,6 +38,7 @@ private slots:
     void on_actionSave_triggered();
     void on_actionLoad_triggered();
     void on_actionAddFriend_triggered();
+    void on_actionAdd_Colleague_triggered();
 };
 
 #endif

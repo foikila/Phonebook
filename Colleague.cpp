@@ -46,3 +46,11 @@ std::string Colleague::toStringSpec() const {
     ss << "Title: " << this->workTitle << std::endl;
     return ss.str();
 }
+
+std::string Colleague::toFileStringSpecc() const {
+    std::stringstream ss;
+    ss << typeid(*this).name() << std::endl;
+    ss << this->workTitle << std::endl;
+    return ss.str();
+}
+

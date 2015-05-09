@@ -34,7 +34,7 @@ public:
     T* remove(T *element);
     unsigned int size() const;
     bool isEmpty() const;
-    std::string toString() const;
+    std::string toString(bool pretty) const;
     T*& elementAt(const unsigned int) const;
 };
 
@@ -167,12 +167,16 @@ unsigned int LinkedList<T>::size() const
 }
 
 template <typename T>
-std::string LinkedList<T>::toString() const
+std::string LinkedList<T>::toString(bool pretty) const
 {
     std::stringstream ss;
     Node *walker = this->first;
     while (walker != nullptr) {
-        ss << walker->element->toString();
+        if (pretty) {
+            ss << walker->element->toString();
+        } else {
+            ss << walker->element->toFileString();
+        }
         walker = walker->next;
     }
     return ss.str();

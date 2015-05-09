@@ -55,14 +55,16 @@ void FileReader<T>::internalRead(List<T> *&list)
             read >> classType;
             if (classType == "Friend") {
                 read >> homeNumber;
-                read >> name;
+                read.ignore();
+                std::getline(read, name);
                 read >> phoneNumber;
                 read >> email;
                 read >> birthYear;
                 read >> title;
                 p = new Friend(name, phoneNumber, email, birthYear, title, homeNumber);
             } else if (classType == "Administraton") {
-                read >> name;
+                read.ignore();
+                std::getline(read, name);
                 read >> phoneNumber;
                 read >> email;
                 read >> birthYear;
@@ -70,7 +72,7 @@ void FileReader<T>::internalRead(List<T> *&list)
                 read >> workTitle;
                 p = new Administration(name, phoneNumber, email, birthYear, title, workTitle);
             } else {
-                throw "Read error: Classtype: " + classType + " not supported";
+                throw "Read error: Classtype: \"" + classType + "\" not supported";
             }
             list->insert(p);
         }
@@ -134,13 +136,12 @@ void FileReader<T>::read(List<T> *&list)
 
 // Saves data to storage
 template <typename T>
-// Should this be a reference or not?
 bool FileReader<T>::save(List<T> *&data) const
 {
     if (!this->getFileName().empty()) {
         std::ofstream write(this->getFileName());
         write << data->size() << std::endl;
-        write << data->toString();
+        write << data->toString(false);
         write.close();
         return true;
     }

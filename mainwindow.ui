@@ -14,10 +14,10 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout_2">
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout">
-      <item row="0" column="0">
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout_3">
+      <item>
        <widget class="QTabWidget" name="tabWidget">
         <property name="currentIndex">
          <number>0</number>
@@ -88,6 +88,7 @@
      <string>Contact</string>
     </property>
     <addaction name="actionAddFriend"/>
+    <addaction name="actionAdd_Colleague"/>
    </widget>
    <addaction name="menuPhonebook"/>
    <addaction name="menuContact"/>
@@ -104,7 +105,12 @@
   </action>
   <action name="actionAddFriend">
    <property name="text">
-    <string>Add</string>
+    <string>Add Friend</string>
+   </property>
+  </action>
+  <action name="actionAdd_Colleague">
+   <property name="text">
+    <string>Add Colleague</string>
    </property>
   </action>
  </widget>

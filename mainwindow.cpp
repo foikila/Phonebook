@@ -30,8 +30,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     this->vd = new ViewDialog(this);
     this->book = new Phonebook();
+    this->filename = "myContacts.txt";
     try {
-        this->book->loadBook("myContact.txt");
+        this->book->loadBook(this->filename);
     } catch (const char *e) {
         QMessageBox messageBox;
         messageBox.critical(this,"Error", "Failed to load file");
@@ -39,6 +40,8 @@ MainWindow::MainWindow(QWidget *parent) :
         std::cout << e << std::endl;
     }
     this->reloadListWidget();
+
+    this->setWindowTitle("Phonebook");
 }
 
 MainWindow::~MainWindow()
@@ -67,7 +70,6 @@ void MainWindow::on_pushButton_clicked()
             messageBox.setFixedSize(500,200);
             break;
         }
-
     } else {
         QMessageBox messageBox;
         messageBox.information(this,"Error","No contact selected!");
@@ -82,7 +84,7 @@ void MainWindow::on_actionSave_triggered()
     if (filename != "") {
         this->book->saveBook(filename.toStdString());
         QMessageBox messageBox;
-        messageBox.information(this,"Error","Saved!");
+        messageBox.information(this,"Success","Saved!");
         messageBox.setFixedSize(500,200);
     }
 }
@@ -116,6 +118,25 @@ void MainWindow::on_actionAddFriend_triggered()
         messageBox.setFixedSize(500,200);
         break;
     }
+}
 
-
+void MainWindow::on_actionAdd_Colleague_triggered()
+{
+    Person *p = new Administration();
+    ColleagueDialog d(this);
+    d.setPerson(p);
+    int ret = d.exec();
+    switch (ret) {
+    case 0:
+        break;
+    case 1:
+        this->book->addPerson(p);
+        this->reloadListWidget();
+        break;
+    default:
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error", "Something terrible happend!");
+        messageBox.setFixedSize(500,200);
+        break;
+    }
 }

@@ -65,3 +65,11 @@ std::string Friend::toStringSpec() const
     ss << "Homenumber: " << this->homeNumber << std::endl;
     return ss.str();
 }
+
+std::string Friend::toFileStringSpecc() const
+{
+    std::stringstream ss;
+    ss << this->getClassName() << std::endl;
+    ss << this->homeNumber << std::endl;
+    return ss.str();
+}

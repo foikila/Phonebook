@@ -22,6 +22,7 @@ public:
     bool operator==(const Friend& f) const;
     bool operator!=(const Friend& f) const;
     std::ostream& operator<<(std::ostream& os);
+    std::string toFileStringSpecc() const;
     std::string toStringSpec() const;
     std::string getClassName() const;
 

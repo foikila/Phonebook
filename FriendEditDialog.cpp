@@ -8,7 +8,7 @@ FriendEditDialog::FriendEditDialog(QWidget *parent) :
     ui(new Ui::FriendEditDialog)
 {
     ui->setupUi(this);
-
+    this->setWindowTitle("Friend Dialog");
 }
 
 FriendEditDialog::~FriendEditDialog()

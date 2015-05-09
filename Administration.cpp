@@ -27,7 +27,7 @@ bool Administration::operator!=(const Administration& a) const
 std::string Administration::getClassName() const
 {
     std::string className = typeid(*this).name();
-    return className.erase(0, 1);
+    return className.erase(0, 2);
 }
 
 std::string Administration::toStringSpec() const
@@ -35,5 +35,13 @@ std::string Administration::toStringSpec() const
     std::stringstream ss;
     ss << "Group: " << this->getClassName() << std::endl;
     ss << "Title: " << this->getWorkTitle() << std::endl;
+    return ss.str();
+}
+
+std::string Administration::toFileStringSpecc() const
+{
+    std::stringstream ss;
+    ss << this->getClassName() << std::endl;
+    ss << this->getWorkTitle() << std::endl;
     return ss.str();
 }

@@ -25,8 +25,10 @@ public:
     virtual ~Person() {}
     Person& operator=(const Person& p);
     std::string toString() const;
+    std::string toFileString() const;
     virtual std::string toStringSpec() const = 0;
     virtual std::string getClassName() const = 0;
+    virtual std::string toFileStringSpecc() const = 0;
 
     std::ostream& operator<<(std::ostream &os);
     bool operator !=(const Person &p) const;

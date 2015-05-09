@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ColleagueDialog</class>
+ <widget class="QDialog" name="ColleagueDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>420</width>
+    <height>538</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="Tab">
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Administration</string>
+      </attribute>
+      <widget class="QComboBox" name="e_title">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>292</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Mr</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mrs</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Miss</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLineEdit" name="e_email">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>164</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>329</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>WorkTitle</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>137</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Email</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>201</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>BirthYear</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_name">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>36</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_phoneNumber">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>100</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>73</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PhoneNumber</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_worktitle">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>356</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_birthYear">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>228</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>265</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Title</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>9</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="tab_2">
+      <attribute name="title">
+       <string>Teacher</string>
+      </attribute>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>198</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>BirthYear</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>6</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Name</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_name_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>33</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>134</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Email</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_worktitle_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>353</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>326</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>WorkTitle</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_email_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>161</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="e_title_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>289</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <item>
+        <property name="text">
+         <string>Mr</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mrs</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Miss</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLineEdit" name="e_birthYear_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>225</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_phoneNumber_2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>97</y>
+         <width>382</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>262</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Title</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>382</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>PhoneNumber</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="e_grade">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>400</y>
+         <width>381</width>
+         <height>31</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>380</y>
+         <width>66</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Grade</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>ColleagueDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>ColleagueDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

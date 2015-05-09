@@ -16,7 +16,7 @@ public:
     virtual T* remove(T *element) = 0;
     virtual unsigned int size() const = 0;
     virtual bool isEmpty() const = 0;
-    virtual std::string toString() const = 0;
+    virtual std::string toString(bool pretty) const = 0;
 };
 
 #endif
