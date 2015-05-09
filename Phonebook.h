@@ -27,8 +27,10 @@ public:
     ~Phonebook();
     bool loadBook(string filename);
     bool saveBook(string filename);
-    bool removePerson(Person *p) const;
-    bool addPerson(Person *p) const;
+    bool removePerson(Person *p);
+    bool addPerson(Person *p);
+    Person*& findPerson(unsigned int pos) const;
+    unsigned int size() const;
 };
 
 #endif

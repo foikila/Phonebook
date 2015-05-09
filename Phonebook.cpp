@@ -2,13 +2,14 @@
 
 Phonebook::Phonebook()
 {
-    this->list = nullptr;
+    this->list = new LinkedList<Person>();
     this->reader = new FileReader<Person>();
 }
 
 Phonebook::~Phonebook()
 {
     delete this->list;
+    delete this->reader;
 }
 
 bool Phonebook::loadBook(string filename)
@@ -46,7 +47,7 @@ bool Phonebook::saveBook(string filename)
     return true;
 }
 
-bool Phonebook::removePerson(Person *p) const
+bool Phonebook::removePerson(Person *p)
 {
     try {
         Person* ret = this->list->remove(p);
@@ -59,7 +60,7 @@ bool Phonebook::removePerson(Person *p) const
     }
 }
 
-bool Phonebook::addPerson(Person *p) const
+bool Phonebook::addPerson(Person *p)
 {
     try {
         this->list->insert(p);
@@ -69,3 +70,14 @@ bool Phonebook::addPerson(Person *p) const
         return false;
     }
 }
+
+Person*& Phonebook::findPerson(unsigned int pos) const
+{
+    return this->list->elementAt(pos);
+}
+
+unsigned int Phonebook::size() const
+{
+    return this->list->size();
+}
+

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "viewDialog.h"
+#include "Phonebook.h"
 #include "List.h"
 #include "LinkedList.h"
 #include "FileReader.h"
@@ -20,7 +21,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 private:
-    List<Person> *list;
+    Phonebook *book;
     Ui::MainWindow *ui;
     ViewDialog *vd;
     void reloadListWidget();
