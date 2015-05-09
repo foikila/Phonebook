@@ -18,12 +18,6 @@ private:
                 this->next = nullptr;
             }
             T *element;
-            std::ostream operator<<(std::ostream &out)
-            {
-                out << *this->element;
-                return out;
-            }
-
             Node *next;
             ~Node() {}
     };
