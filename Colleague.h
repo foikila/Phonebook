@@ -18,8 +18,8 @@ public:
     Colleague& operator=(const Colleague& c);
     bool operator==(const Colleague& c) const;
     bool operator!=(const Colleague& c) const;
-    virtual std::string toStringSpec() const;
-    virtual std::string toFileStringSpecc() const;
+    virtual std::string toStringSpec() const = 0;
+    virtual std::string toFileStringSpecc() const = 0;
 
     std::string getWorkTitle() const;
 

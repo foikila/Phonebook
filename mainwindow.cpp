@@ -57,8 +57,6 @@ void MainWindow::on_pushButton_clicked()
     if (toView >= 0) {
         vd->addPerson(this->book->findPerson(toView));
         int ret = this->vd->exec();
-
-        std::cout << "RET: " <<  ret << std::endl;
         switch (ret) {
         case 0:
         case 1:
@@ -122,21 +120,23 @@ void MainWindow::on_actionAddFriend_triggered()
 
 void MainWindow::on_actionAdd_Colleague_triggered()
 {
-    Person *p = new Administration();
     ColleagueDialog d(this);
-    d.setPerson(p);
     int ret = d.exec();
-    switch (ret) {
-    case 0:
-        break;
-    case 1:
-        this->book->addPerson(p);
-        this->reloadListWidget();
-        break;
-    default:
-        QMessageBox messageBox;
-        messageBox.critical(0,"Error", "Something terrible happend!");
-        messageBox.setFixedSize(500,200);
-        break;
+    Person *p = d.getPerson();
+    if (p != nullptr) {
+        switch (ret) {
+        case 0:
+            break;
+        case 1:
+            this->book->addPerson(p);
+            this->reloadListWidget();
+            break;
+        default:
+            QMessageBox messageBox;
+            messageBox.critical(0,"Error", "Something terrible happend!");
+            messageBox.setFixedSize(500,200);
+            break;
+        }
     }
 }
+

@@ -19,9 +19,9 @@ public:
     std::string getGrade() const;
     void setGrade(std::string grade);
 
+    virtual std::string toFileStringSpecc() const;
     virtual std::string toStringSpec() const;
     virtual std::string getClassName() const;
-    virtual std::string toFileStringSpecc() const;
 };
 
 #endif

@@ -7,10 +7,15 @@ Teacher::Teacher() : Colleague()
 
 Teacher::Teacher(
         std::string name, std::string phoneNumber, std::string email,
-        int birthYear, std::string title, std::string workTitle, std::string grade
-                 ) : Colleague(name, phoneNumber, email, birthYear, title, workTitle)
+        int birthYear, std::string title, std::string workTitle, std::string grade)
+        : Colleague(name, phoneNumber, email, birthYear, title, workTitle)
 {
     this->grade = grade;
+}
+
+Teacher::~Teacher()
+{
+
 }
 
 void Teacher::setGrade(std::string grade)

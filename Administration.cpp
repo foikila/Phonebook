@@ -4,7 +4,7 @@ Administration::Administration() : Colleague()
 {
 }
 
-Administration:: Administration(
+Administration::Administration(
         std::string name, std::string phoneNumber, std::string email,
         int birthYear, std::string title, std::string workTitle)
     : Colleague(name, phoneNumber, email, birthYear, title, workTitle)

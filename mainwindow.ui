@@ -108,6 +108,16 @@
     <string>Add Friend</string>
    </property>
   </action>
+  <action name="actionAdministration">
+   <property name="text">
+    <string>Administration</string>
+   </property>
+  </action>
+  <action name="actionTeacher">
+   <property name="text">
+    <string>Teacher</string>
+   </property>
+  </action>
   <action name="actionAdd_Colleague">
    <property name="text">
     <string>Add Colleague</string>
