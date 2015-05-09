@@ -33,7 +33,7 @@ std::string Administration::getClassName() const
 std::string Administration::toStringSpec() const
 {
     std::stringstream ss;
-    ss << this->getClassName() << std::endl;
-    ss << this->getWorkTitle() << std::endl;
+    ss << "Group: " << this->getClassName() << std::endl;
+    ss << "Title: " << this->getWorkTitle() << std::endl;
     return ss.str();
 }

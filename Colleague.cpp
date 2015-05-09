@@ -42,7 +42,7 @@ void Colleague::setWorkTitle(std::string title)
 
 std::string Colleague::toStringSpec() const {
     std::stringstream ss;
-    ss << typeid(*this).name() << std::endl;
-    ss << this->workTitle << std::endl;
+    ss << "Group: " << typeid(*this).name() << std::endl;
+    ss << "Title: " << this->workTitle << std::endl;
     return ss.str();
 }

@@ -53,12 +53,12 @@ std::ostream& Person::operator<<(std::ostream &os)
 std::string Person::toString() const
 {
     std::stringstream ss;
-    ss << this->toStringSpec();
-    ss << this->name << std::endl;
-    ss << this->phoneNumber << std::endl;
-    ss << this->email << std::endl;
-    ss << this->birthYear << std::endl;
     ss << this->title << std::endl;
+    ss << "Name: " <<  this->name << std::endl;
+    ss << this->toStringSpec();
+    ss << "Phonenumber: " << this->phoneNumber << std::endl;
+    ss << "Email: " <<  this->email << std::endl;
+    ss << "BirthYear: " << this->birthYear << std::endl;
     return ss.str();
 }
 

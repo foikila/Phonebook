@@ -51,6 +51,7 @@ void Friend::setHomeNumber(std::string number)
 {
     this->homeNumber = number;
 }
+
 std::string Friend::getClassName() const
 {
     std::string className = typeid(*this).name();
@@ -60,7 +61,7 @@ std::string Friend::getClassName() const
 std::string Friend::toStringSpec() const
 {
     std::stringstream ss;
-    ss << this->getClassName() << std::endl;
-    ss << this->homeNumber << std::endl;
+    ss << "Group: " << this->getClassName() << std::endl;
+    ss << "Homenumber: " << this->homeNumber << std::endl;
     return ss.str();
 }
