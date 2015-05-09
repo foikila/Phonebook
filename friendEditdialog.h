@@ -19,6 +19,8 @@ public:
     ~FriendEditDialog();
     void setFriend(Person *&f);
 
+private slots:
+    void on_buttonBox_accepted();
 };
 
 #endif // FRIENDEDITDIALOG_H
