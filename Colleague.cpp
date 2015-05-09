@@ -32,7 +32,7 @@ bool Colleague::operator!=(const Colleague& f) const
 
 std::string Colleague::getWorkTitle() const
 {
-    return this->workTitle;
+    return this->workTitle;q
 }
 
 void Colleague::setWorkTitle(std::string title)
