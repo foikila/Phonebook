@@ -2,6 +2,7 @@
 #define VIEWDIALOG_H
 
 #include <QDialog>
+#include <QMessageBox>
 #include "Person.h"
 #include "friendEditdialog.h"
 
@@ -20,7 +21,7 @@ private:
 
 public:
     explicit ViewDialog(QWidget *parent = 0);
-    void addPerson(Person *p);
+    void addPerson(Person *&p);
     ~ViewDialog();
 
 private slots:

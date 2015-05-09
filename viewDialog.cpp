@@ -13,7 +13,7 @@ ViewDialog::ViewDialog(QWidget *parent) :
     ui->setupUi(this);
 }
 
-void ViewDialog::addPerson(Person *p)
+void ViewDialog::addPerson(Person *&p)
 {
     this->p = p;
     ui->plainTextEdit->setPlainText(QString::fromStdString(this->p->toString()));
@@ -34,6 +34,20 @@ void ViewDialog::on_pushButton_clicked()
     if (this->p->getClassName() == "Friend") {
         this->editView = new FriendEditDialog(this);
         this->editView->setFriend(this->p);
-        this->editView->show();
+        int ret = this->editView->exec();
+        switch (ret) {
+        case 0:
+        case 1:
+            ui->plainTextEdit->setPlainText(QString::fromStdString(this->p->toString()));
+            break;
+        default:
+            QMessageBox messageBox;
+            messageBox.critical(0,"Error", "Something terrible happend!");
+            messageBox.setFixedSize(500,200);
+            break;
+        }
+
+        std::cout << "ret: " << ret << std::endl;
+        std::cout << this->p << std::endl;
     }
 }
