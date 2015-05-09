@@ -1,6 +1,7 @@
-#include "friendEditdialog.h"
-#include "ui_friendEditdialog.h"
+#include "FriendEditDialog.h"
+#include "ui_friendEditDialog.h"
 #include <iostream>
+
 
 FriendEditDialog::FriendEditDialog(QWidget *parent) :
     QDialog(parent),

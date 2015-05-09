@@ -112,21 +112,3 @@ void Person::setTitle(std::string title)
     std::transform(title.begin(), title.end(), title.begin(), ::toupper);
     this->title = title;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

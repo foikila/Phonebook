@@ -31,13 +31,6 @@ MainWindow::MainWindow(QWidget *parent) :
     this->vd = new ViewDialog(this);
     this->book = new Phonebook();
     try {
-        /*this->book->addPerson(new Friend("name", "03", "asdm@email.com", 1994, "MR", "034038889"));
-        this->book->addPerson(new Friend("name2", "03", "asdm@email.com", 1994, "MR", "034038889"));
-        this->book->addPerson(new Friend("name3", "03", "asdm@email.com", 1994, "MR", "034038889"));
-        this->book->addPerson(new Friend("name4", "03", "asdm@email.com", 1994, "MR", "034038889"));
-        this->book->addPerson(new Friend("name5", "03", "asdm@email.com", 1994, "MR", "034038889"));
-        this->book->addPerson(new Friend("name6", "03", "asdm@email.com", 1994, "MR", "034038889"));
-        this->book->saveBook("myContact.txt");*/
         this->book->loadBook("myContact.txt");
     } catch (const char *e) {
         QMessageBox messageBox;
@@ -80,4 +73,49 @@ void MainWindow::on_pushButton_clicked()
         messageBox.information(this,"Error","No contact selected!");
         messageBox.setFixedSize(500,200);
     }
+}
+
+void MainWindow::on_actionSave_triggered()
+{
+    QString filename = QFileDialog::getSaveFileName(this, tr("Save File"), QString(),
+                   tr("Text Files (*.txt);;C++ Files (*.cpp *.h)"));
+    if (filename != "") {
+        this->book->saveBook(filename.toStdString());
+        QMessageBox messageBox;
+        messageBox.information(this,"Error","Saved!");
+        messageBox.setFixedSize(500,200);
+    }
+}
+
+void MainWindow::on_actionLoad_triggered()
+{
+    QString filename= QFileDialog::getOpenFileName(this, tr("Open File"), QString(),
+                   tr("Text Files (*.txt);;C++ Files (*.cpp *.h)"));
+    if (filename != "") {
+        this->book->loadBook(filename.toStdString());
+        this->reloadListWidget();
+    }
+}
+
+void MainWindow::on_actionAddFriend_triggered()
+{
+    Person *p = new Friend();
+    FriendEditDialog d(this);
+    d.setFriend(p);
+    int ret = d.exec();
+    switch (ret) {
+    case 0:
+        break;
+    case 1:
+        this->book->addPerson(p);
+        this->reloadListWidget();
+        break;
+    default:
+        QMessageBox messageBox;
+        messageBox.critical(0,"Error", "Something terrible happend!");
+        messageBox.setFixedSize(500,200);
+        break;
+    }
+
+
 }

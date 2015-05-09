@@ -4,7 +4,7 @@
 #include <QDialog>
 #include <QMessageBox>
 #include "Person.h"
-#include "friendEditdialog.h"
+#include "FriendEditDialog.h"
 
 namespace Ui {
 class ViewDialog;
@@ -29,4 +29,4 @@ private slots:
     void on_pushButton_clicked();
 };
 
-#endif // VIEWDIALOG_H
+#endif

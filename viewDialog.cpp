@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "Person.h"
-#include "friendEditdialog.h"
+#include "FriendEditDialog.h"
 
 ViewDialog::ViewDialog(QWidget *parent) :
     QDialog(parent),
@@ -38,6 +38,7 @@ void ViewDialog::on_pushButton_clicked()
         switch (ret) {
         case 0:
         case 1:
+            ui->plainTextEdit->clear();
             ui->plainTextEdit->setPlainText(QString::fromStdString(this->p->toString()));
             break;
         default:

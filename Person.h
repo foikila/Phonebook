@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <ostream>
 
-const std::string DEFAULT = "invalid";
+const std::string DEFAULT = "";
 
 class Person
 {

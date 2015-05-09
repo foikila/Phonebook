@@ -81,7 +81,6 @@ void FileReader<T>::internalRead(List<T> *&list)
 template <typename T>
 FileReader<T>::FileReader() : Reader<T>()
 {
-    // TODO insert default filename here
     this->filename = "";
 }
 

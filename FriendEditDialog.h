@@ -23,4 +23,4 @@ private slots:
     void on_buttonBox_accepted();
 };
 
-#endif // FRIENDEDITDIALOG_H
+#endif

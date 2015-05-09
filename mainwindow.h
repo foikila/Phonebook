@@ -3,13 +3,15 @@
 
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QFileDialog>
+
 #include "viewDialog.h"
-#include "Phonebook.h"
-#include "List.h"
-#include "LinkedList.h"
+#include "FriendEditDialog.h"
+
 #include "FileReader.h"
-#include "Administration.h"
 #include "Person.h"
+#include "Phonebook.h"
+#include "Administration.h"
 #include "Colleague.h"
 #include "Friend.h"
 
@@ -31,6 +33,9 @@ public:
     ~MainWindow();
 private slots:
     void on_pushButton_clicked();
+    void on_actionSave_triggered();
+    void on_actionLoad_triggered();
+    void on_actionAddFriend_triggered();
 };
 
 #endif
