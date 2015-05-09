@@ -35,4 +35,5 @@ void FriendEditDialog::on_buttonBox_accepted()
     this->f->setBirthYear(this->ui->e_birthYear->text().toInt());
     this->f->setPhoneNumber(this->ui->e_phoneNumber->text().toStdString());
     this->f->setHomeNumber(this->ui->e_homeNumber->text().toStdString());
+    this->f->setTitle(this->ui->e_title->currentText().toStdString());
 }
