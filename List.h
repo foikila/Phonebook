@@ -12,8 +12,7 @@ public:
     // virtual void insertAt(const int pos, T *element) = 0;
     virtual T*& elementAt(const unsigned int pos) const = 0;
     virtual T* peek() = 0;
-    virtual T* remove() = 0;
-    virtual T* remove(T *element) = 0;
+    virtual void removeAt(const unsigned int pos) = 0;
     virtual unsigned int size() const = 0;
     virtual bool isEmpty() const = 0;
     virtual std::string toString(bool pretty) const = 0;

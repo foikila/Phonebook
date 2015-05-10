@@ -31,7 +31,7 @@ public:
     void insert(T *element);
     T* peek();
     T* remove();
-    T* remove(T *element);
+    void removeAt(const unsigned int pos);
     unsigned int size() const;
     bool isEmpty() const;
     std::string toString(bool pretty) const;
@@ -135,22 +135,36 @@ T* LinkedList<T>::remove()
 }
 
 template <typename T>
-T* LinkedList<T>::remove(T *element)
+void LinkedList<T>::removeAt(const unsigned int pos)
 {
-    /*if (!this->isEmpty()) {
+    /*if (pos > 0 && pos > this->nrOfEle) {
+        throw "index out of bound";
+    } else if (!this->isEmpty()) {
         Node *walker = this->first;
-        // Walks and linear seachers the element //
-        while (walker != nullptr && *walker != *element) {
+        for (unsigned int i = 0; i < pos -1 && walker != nullptr; i++) {
             walker = walker->next;
         }
-        std::cout <<  walker->element << std::endl;
-        T* ret = walker->element;
-        std::cout << ret << std::endl;
-        delete walker;
-        this->nrOfEle--;
-        return ret;
+        Node *toDel = walker->next;
+        walker->next = toDel->next;
+        delete toDel;
     }*/
-    return nullptr;
+    if (this->first != nullptr && pos > 0 && pos <= this->nrOfEle) {
+            Node *walker = this->first;
+            int counter = 0;
+            while (counter < pos - 1) {
+                walker = walker->next;
+                counter++;
+            }
+            Node *toDelete = walker->next;
+            walker->next = toDelete->next;
+            delete toDelete;
+            this->nrOfEle--;
+        } else if (this->first != nullptr && pos == 0) {
+            Node *toDelete = this->first;
+            this->first = toDelete->next;
+            delete toDelete;
+            this->nrOfEle--;
+        }
 }
 
 template <typename T>
@@ -184,7 +198,6 @@ std::string LinkedList<T>::toString(bool pretty) const
 template <typename T>
 T*& LinkedList<T>::elementAt(const unsigned int pos) const
 {
-    using namespace std;
     if (pos > 0 && pos > this->nrOfEle) {
         throw "index out of bound";
     } else if (!this->isEmpty()) {

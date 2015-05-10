@@ -27,7 +27,7 @@ public:
     ~Phonebook();
     bool loadBook(string filename);
     bool saveBook(string filename);
-    bool removePerson(Person *p);
+    bool removePerson(const unsigned int pos);
     bool addPerson(Person *p);
     Person*& findPerson(const unsigned int pos) const;
     Person*& findPerson(const std::string name) const;

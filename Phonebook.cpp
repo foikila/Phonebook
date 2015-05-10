@@ -47,12 +47,10 @@ bool Phonebook::saveBook(string filename)
     return true;
 }
 
-bool Phonebook::removePerson(Person *p)
+bool Phonebook::removePerson(const unsigned int pos)
 {
     try {
-        Person* ret = this->list->remove(p);
-        delete ret;
-        ret = nullptr;
+        this->list->removeAt(pos);
         return true;
     } catch (const char *e) {
         cout << e << endl;

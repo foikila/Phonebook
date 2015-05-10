@@ -65,6 +65,8 @@
     </property>
     <addaction name="actionAddFriend"/>
     <addaction name="actionAdd_Colleague"/>
+    <addaction name="separator"/>
+    <addaction name="actionRemove"/>
    </widget>
    <addaction name="menuPhonebook"/>
    <addaction name="menuContact"/>
@@ -97,6 +99,11 @@
   <action name="actionAdd_Colleague">
    <property name="text">
     <string>Add Colleague</string>
+   </property>
+  </action>
+  <action name="actionRemove">
+   <property name="text">
+    <string>Remove</string>
    </property>
   </action>
  </widget>

@@ -36,6 +36,7 @@ public:
     QAction *actionAdministration;
     QAction *actionTeacher;
     QAction *actionAdd_Colleague;
+    QAction *actionRemove;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout_2;
     QLineEdit *searchText;
@@ -65,6 +66,8 @@ public:
         actionTeacher->setObjectName(QStringLiteral("actionTeacher"));
         actionAdd_Colleague = new QAction(MainWindow);
         actionAdd_Colleague->setObjectName(QStringLiteral("actionAdd_Colleague"));
+        actionRemove = new QAction(MainWindow);
+        actionRemove->setObjectName(QStringLiteral("actionRemove"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         verticalLayout_2 = new QVBoxLayout(centralWidget);
@@ -114,6 +117,8 @@ public:
         menuPhonebook->addAction(actionLoad);
         menuContact->addAction(actionAddFriend);
         menuContact->addAction(actionAdd_Colleague);
+        menuContact->addSeparator();
+        menuContact->addAction(actionRemove);
 
         retranslateUi(MainWindow);
 
@@ -129,6 +134,7 @@ public:
         actionAdministration->setText(QApplication::translate("MainWindow", "Administration", 0));
         actionTeacher->setText(QApplication::translate("MainWindow", "Teacher", 0));
         actionAdd_Colleague->setText(QApplication::translate("MainWindow", "Add Colleague", 0));
+        actionRemove->setText(QApplication::translate("MainWindow", "Remove", 0));
         pushButton->setText(QApplication::translate("MainWindow", "View", 0));
         menuPhonebook->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuContact->setTitle(QApplication::translate("MainWindow", "Contact", 0));

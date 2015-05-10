@@ -143,6 +143,10 @@ void MainWindow::on_actionAdd_Colleague_triggered()
 
 void MainWindow::on_searchText_textChanged(const QString &arg1)
 {
+    if (arg1.isEmpty()) {
+        this->reloadListWidget();
+        return;
+    }
     std::vector<std::string> resultSet;
     std::string searchStr = arg1.toStdString();
     for (unsigned int i = 0; i < this->ui->listWidget->count(); i++) {
@@ -163,4 +167,16 @@ void MainWindow::on_searchText_textChanged(const QString &arg1)
             }
         }
     }
+}
+
+void MainWindow::on_actionRemove_triggered()
+{
+    QMessageBox messageBox;
+    if (this->book->removePerson(this->ui->listWidget->currentRow())) {
+        messageBox.information(0,"Success", "Removed!");
+        this->reloadListWidget();
+    } else {
+        messageBox.critical(0,"Error", "Error removing person");
+    }
+    messageBox.setFixedSize(500, 200);
 }

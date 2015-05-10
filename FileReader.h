@@ -8,6 +8,7 @@
 #include "Colleague.h"
 #include "Friend.h"
 #include "Administration.h"
+#include "Teacher.h"
 
 #include <iostream>
 
@@ -46,10 +47,10 @@ void FileReader<T>::internalRead(List<T> *&list)
         std::string homeNumber;
         std::string classType;
         std::string workTitle;
+        std::string grade;
 
         read >> nrOfElements;
         read.ignore();
-        std::cout << nrOfElements << std::endl;
         Person *p = nullptr;
         for (unsigned int i = 0; i < nrOfElements; i++) {
             read >> classType;
@@ -62,15 +63,28 @@ void FileReader<T>::internalRead(List<T> *&list)
                 read >> birthYear;
                 read >> title;
                 p = new Friend(name, phoneNumber, email, birthYear, title, homeNumber);
-            } else if (classType == "Administraton") {
+            } else if (classType == "Administration") {
+                read.ignore();
+                read >> workTitle;
                 read.ignore();
                 std::getline(read, name);
                 read >> phoneNumber;
                 read >> email;
                 read >> birthYear;
                 read >> title;
-                read >> workTitle;
                 p = new Administration(name, phoneNumber, email, birthYear, title, workTitle);
+            } else if (classType == "Teacher") {
+                read.ignore();
+                read >> workTitle;
+                read >> grade;
+                read.ignore();
+                std::getline(read, name);
+                read >> phoneNumber;
+                read >> email;
+                read >> birthYear;
+                read >> title;
+
+                p = new Teacher(name, phoneNumber, email, birthYear, title, workTitle, grade);
             } else {
                 throw "Read error: Classtype: \"" + classType + "\" not supported";
             }
