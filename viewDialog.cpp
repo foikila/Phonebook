@@ -23,6 +23,7 @@ ViewDialog::~ViewDialog()
 {
     delete ui;
     delete this->editView;
+    delete this->cd;
 }
 
 void ViewDialog::on_ViewDialog_accepted()
@@ -31,11 +32,18 @@ void ViewDialog::on_ViewDialog_accepted()
 
 void ViewDialog::on_pushButton_clicked()
 {
-    if (this->p->getClassName() == "Friend") {
+    int ret = -1;
+    std::string classType = this->p->getClassName();
+    if (classType == "Friend") {
         this->editView = new FriendEditDialog(this);
         this->editView->setFriend(this->p);
-        int ret = this->editView->exec();
-        switch (ret) {
+        ret = this->editView->exec();
+    } else {
+        this->cd = new ColleagueDialog(this);
+        this->cd->setPerson(this->p);
+        ret = this->cd->exec();
+    }
+    switch (ret) {
         case 0:
         case 1:
             ui->plainTextEdit->clear();
@@ -46,9 +54,5 @@ void ViewDialog::on_pushButton_clicked()
             messageBox.critical(0,"Error", "Something terrible happend!");
             messageBox.setFixedSize(500,200);
             break;
-        }
-
-        std::cout << "ret: " << ret << std::endl;
-        std::cout << this->p << std::endl;
     }
 }

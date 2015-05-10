@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>559</width>
-    <height>428</height>
+    <height>571</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,19 +38,6 @@
            </widget>
           </item>
          </layout>
-        </widget>
-        <widget class="QWidget" name="Search">
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <attribute name="title">
-          <string>Friends</string>
-         </attribute>
-        </widget>
-        <widget class="QWidget" name="tab_3">
-         <attribute name="title">
-          <string>Add Person</string>
-         </attribute>
         </widget>
        </widget>
       </item>

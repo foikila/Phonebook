@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include "Person.h"
 #include "FriendEditDialog.h"
+#include "ColleagueDialog.h"
 
 namespace Ui {
 class ViewDialog;
@@ -18,6 +19,7 @@ private:
     Ui::ViewDialog *ui;
     Person *p;
     FriendEditDialog *editView;
+    ColleagueDialog *cd;
 
 public:
     explicit ViewDialog(QWidget *parent = 0);
