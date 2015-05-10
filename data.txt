@@ -1,0 +1,29 @@
+4
+Friend
+03333
+Henrik Ölund
+030303
+mail@mail.se
+1970
+MR
+Friend
+03333
+Karl Khilström
+030303
+mail@mail.se
+1970
+MR
+Friend
+03333
+Johan Andersson
+030303
+mail@mail.se
+1970
+MR
+Administration
+Boss
+Birgitta
+0123
+mail@mail.se
+1966
+MRS
