@@ -103,7 +103,6 @@ template <typename T>
 void LinkedList<T>::insert(T *element)
 {
     if (this->isEmpty()) {
-        std::cout << element << std::endl;
         this->first = new Node(element);
     } else {
         Node *walker = this->first;

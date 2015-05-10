@@ -14,13 +14,13 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTabWidget>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -38,14 +38,10 @@ public:
     QAction *actionAdd_Colleague;
     QWidget *centralWidget;
     QVBoxLayout *verticalLayout_2;
-    QVBoxLayout *verticalLayout_3;
-    QTabWidget *tabWidget;
-    QWidget *Overview;
+    QLineEdit *searchText;
     QVBoxLayout *verticalLayout;
     QListWidget *listWidget;
     QPushButton *pushButton;
-    QWidget *Search;
-    QWidget *tab_3;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
     QMenuBar *menuBar;
@@ -56,7 +52,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(559, 428);
+        MainWindow->resize(584, 598);
         actionSave = new QAction(MainWindow);
         actionSave->setObjectName(QStringLiteral("actionSave"));
         actionLoad = new QAction(MainWindow);
@@ -75,40 +71,26 @@ public:
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setSpacing(6);
-        verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
-        tabWidget = new QTabWidget(centralWidget);
-        tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        Overview = new QWidget();
-        Overview->setObjectName(QStringLiteral("Overview"));
-        verticalLayout = new QVBoxLayout(Overview);
+        searchText = new QLineEdit(centralWidget);
+        searchText->setObjectName(QStringLiteral("searchText"));
+
+        verticalLayout_2->addWidget(searchText);
+
+        verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
-        verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        listWidget = new QListWidget(Overview);
+        listWidget = new QListWidget(centralWidget);
         listWidget->setObjectName(QStringLiteral("listWidget"));
 
         verticalLayout->addWidget(listWidget);
 
-        pushButton = new QPushButton(Overview);
+        pushButton = new QPushButton(centralWidget);
         pushButton->setObjectName(QStringLiteral("pushButton"));
 
         verticalLayout->addWidget(pushButton);
 
-        tabWidget->addTab(Overview, QString());
-        Search = new QWidget();
-        Search->setObjectName(QStringLiteral("Search"));
-        Search->setAutoFillBackground(false);
-        tabWidget->addTab(Search, QString());
-        tab_3 = new QWidget();
-        tab_3->setObjectName(QStringLiteral("tab_3"));
-        tabWidget->addTab(tab_3, QString());
 
-        verticalLayout_3->addWidget(tabWidget);
-
-
-        verticalLayout_2->addLayout(verticalLayout_3);
+        verticalLayout_2->addLayout(verticalLayout);
 
         MainWindow->setCentralWidget(centralWidget);
         mainToolBar = new QToolBar(MainWindow);
@@ -119,7 +101,7 @@ public:
         MainWindow->setStatusBar(statusBar);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 559, 29));
+        menuBar->setGeometry(QRect(0, 0, 584, 29));
         menuPhonebook = new QMenu(menuBar);
         menuPhonebook->setObjectName(QStringLiteral("menuPhonebook"));
         menuContact = new QMenu(menuBar);
@@ -135,9 +117,6 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
-
-
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
 
@@ -151,9 +130,6 @@ public:
         actionTeacher->setText(QApplication::translate("MainWindow", "Teacher", 0));
         actionAdd_Colleague->setText(QApplication::translate("MainWindow", "Add Colleague", 0));
         pushButton->setText(QApplication::translate("MainWindow", "View", 0));
-        tabWidget->setTabText(tabWidget->indexOf(Overview), QApplication::translate("MainWindow", "Overview", 0));
-        tabWidget->setTabText(tabWidget->indexOf(Search), QApplication::translate("MainWindow", "Friends", 0));
-        tabWidget->setTabText(tabWidget->indexOf(tab_3), QApplication::translate("MainWindow", "Add Person", 0));
         menuPhonebook->setTitle(QApplication::translate("MainWindow", "File", 0));
         menuContact->setTitle(QApplication::translate("MainWindow", "Contact", 0));
     } // retranslateUi

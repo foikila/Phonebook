@@ -29,7 +29,8 @@ public:
     bool saveBook(string filename);
     bool removePerson(Person *p);
     bool addPerson(Person *p);
-    Person*& findPerson(unsigned int pos) const;
+    Person*& findPerson(const unsigned int pos) const;
+    Person*& findPerson(const std::string name) const;
     unsigned int size() const;
 };
 

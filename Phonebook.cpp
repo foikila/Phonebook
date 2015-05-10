@@ -71,9 +71,18 @@ bool Phonebook::addPerson(Person *p)
     }
 }
 
-Person*& Phonebook::findPerson(unsigned int pos) const
+Person*& Phonebook::findPerson(const unsigned int pos) const
 {
     return this->list->elementAt(pos);
+}
+
+Person*& Phonebook::findPerson(const std::string name) const
+{
+    for (int i = 0; i < this->list->size(); i++) {
+        if (this->list->elementAt(i)->getName() == name) {
+            return this->list->elementAt(i);
+        }
+    }
 }
 
 unsigned int Phonebook::size() const

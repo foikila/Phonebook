@@ -1,5 +1,5 @@
 #include "FriendEditDialog.h"
-#include "ui_friendEditDialog.h"
+#include "ui_FriendEditDialog.h"
 #include <iostream>
 
 

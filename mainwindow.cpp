@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <vector>
 // ===================
 // private
 // ===================
@@ -53,9 +53,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButton_clicked()
 {
-    int toView = ui->listWidget->currentRow();
-    if (toView >= 0) {
-        vd->addPerson(this->book->findPerson(toView));
+    if (ui->listWidget->currentRow() >= 0) {
+        std::string currentSelected = this->ui->listWidget->currentItem()->text().toStdString();
+        vd->addPerson(this->book->findPerson(currentSelected));
         int ret = this->vd->exec();
         switch (ret) {
         case 0:
@@ -140,3 +140,27 @@ void MainWindow::on_actionAdd_Colleague_triggered()
     }
 }
 
+
+void MainWindow::on_searchText_textChanged(const QString &arg1)
+{
+    std::vector<std::string> resultSet;
+    std::string searchStr = arg1.toStdString();
+    for (unsigned int i = 0; i < this->ui->listWidget->count(); i++) {
+        std::string current = this->ui->listWidget->item(i)->text().toStdString();
+        if (current.find(searchStr) != string::npos) {
+            resultSet.push_back(current);
+        }
+    }
+    this->ui->listWidget->clear();
+    if (resultSet.empty()) {
+        this->reloadListWidget();
+    } else {
+        for (unsigned int i = 0; i < resultSet.size(); i++) {
+            try {
+                this->ui->listWidget->addItem(QString::fromStdString(resultSet[i]));
+            } catch (const char * e) {
+                std::cout << *e << std::endl;
+            }
+        }
+    }
+}

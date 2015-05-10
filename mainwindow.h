@@ -39,6 +39,7 @@ private slots:
     void on_actionLoad_triggered();
     void on_actionAddFriend_triggered();
     void on_actionAdd_Colleague_triggered();
+    void on_searchText_textChanged(const QString &arg1);
 };
 
 #endif
