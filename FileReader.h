@@ -11,6 +11,8 @@
 #include "Teacher.h"
 
 #include <iostream>
+#include <ostream>
+#include <fstream>
 
 template <typename T>
 class FileReader : public Reader<T>
@@ -36,7 +38,7 @@ public:
 template <typename T>
 void FileReader<T>::internalRead(List<T> *&list)
 {
-    std::ifstream read(this->filename);
+    std::ifstream read(this->filename.c_str());
     if (read.is_open()) {
         unsigned int nrOfElements;
         std::string name;
@@ -153,7 +155,7 @@ template <typename T>
 bool FileReader<T>::save(List<T> *&data) const
 {
     if (!this->getFileName().empty()) {
-        std::ofstream write(this->getFileName());
+        std::ofstream write(this->filename.c_str());
         write << data->size() << std::endl;
         write << data->toString(false);
         write.close();
